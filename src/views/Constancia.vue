@@ -175,9 +175,32 @@ export default {
 
     const cui = this.$route.params.cui
 
-    const response = await axios.get(
-      `https://sisacad-enrollments-backend.vercel.app/restful/enrollment-certificate/?cui=${cui}`
-    )
+    console.log("Entró al mounted")
+
+this.student = {
+  cui: 20250100,
+  full_name: "PRUEBA",
+  email: "prueba@unsa.edu.pe"
+}
+
+this.enrollments = [
+  {
+    id: 1,
+    workload: {
+      course: {
+        code: "2502117",
+        name: "DESARROLLO DE APLICACIONES WEB",
+        acronym: "DAW",
+        year_display: "2do año"
+      },
+      group: "A",
+      laboratory: "lab01",
+      teacher: {
+        full_name: "DOCENTE PRUEBA"
+      }
+    }
+  }
+]
 
     this.enrollments = response.data.results
 
