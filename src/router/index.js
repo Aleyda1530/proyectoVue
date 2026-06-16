@@ -1,18 +1,16 @@
-// router/index.js
-import { createRouter, createWebHistory } from "vue-router";
-import Constancia from "../views/Constancia.vue";
+import { createRouter, createWebHistory } from 'vue-router'
+import Constancia from '../views/Constancia.vue'
 
 const routes = [
   {
-    path: "/constancia/:cui",
-    name: "constancia",
-    component: Constancia,
-  },
-];
+    path: '/constancia/:cui',
+    component: Constancia
+  }
+]
 
 const router = createRouter({
   history: createWebHistory(),
-  routes,
-});
+  routes
+})
 
-export default router;
+export default router
