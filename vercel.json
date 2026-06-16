@@ -1,5 +1,12 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
+    {
+      "source": "/api/enrollment-certificate",
+      "destination": "https://sisacad-enrollments-backend.vercel.app/restful/enrollment-certificate/"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
   ]
 }

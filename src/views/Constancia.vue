@@ -1,6 +1,5 @@
 <template>
-    <div>
-    <h1>PRUEBA VUE</h1>
+
   <div class="container" v-if="student">
 
     <h1>CONSTANCIA DE MATRÍCULA DE LABORATORIO</h1>
@@ -80,7 +79,6 @@
     </footer>
 
     </div>
-     </div>
 </template>
 
 <style>
@@ -175,32 +173,9 @@ export default {
 
     const cui = this.$route.params.cui
 
-    console.log("Entró al mounted")
-
-this.student = {
-  cui: 20250100,
-  full_name: "PRUEBA",
-  email: "prueba@unsa.edu.pe"
-}
-
-this.enrollments = [
-  {
-    id: 1,
-    workload: {
-      course: {
-        code: "2502117",
-        name: "DESARROLLO DE APLICACIONES WEB",
-        acronym: "DAW",
-        year_display: "2do año"
-      },
-      group: "A",
-      laboratory: "lab01",
-      teacher: {
-        full_name: "DOCENTE PRUEBA"
-      }
-    }
-  }
-]
+    const response = await axios.get(
+    `/api/enrollment-certificate?cui=${cui}`
+    )
 
     this.enrollments = response.data.results
 
